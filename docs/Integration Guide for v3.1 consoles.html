@@ -1,0 +1,453 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>Integration Guide</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: 29d1c5bc36da364ad5aa86946d420b7bbc54a253 */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+</head>
+<body>
+<h1>Radioplayer v3.1 Integration Guide</h1>
+<p>This guide will help you customise the Radioplayer console for your station.
+Generally, there should be no need to change any part of the player other than those sections referred to below. <strong>You are strongly advised to read this guide in conjunction with the User Guide.</strong></p>
+<h2>Theme</h2>
+<p>The station logo and background image or colour can be set in style/theme.css</p>
+<p>If you choose to have a dark background, you will need to change the controls to the light variation.
+To do this, open index.html and scroll to the line which begins <code>&lt;div class=&quot;radioplayer</code>.
+You will see <code>dark-theme</code> by default, which can be changed to <code>light-theme</code>.</p>
+<p>You must also update the station logo link to point to your website, and the accessibility text containing your station name.
+To do this, look for the line in index.html which begins <code>&lt;a class=&quot;stn-logo&quot;</code> and update the 'href' parameter to your website URL, and replace the two instances of 'Your Station Name' with your station name.</p>
+<h2>Settings</h2>
+<p>These are found near the top of index.html</p>
+<p><code>currentStationID</code> and <code>currentStationName</code> must be set to your Radioplayer ID and station name.
+Contact station.support@radioplayer.ca if you do not know your Radioplayer ID.</p>
+<h3>Now Playing Source</h3>
+<p><code>nowPlayingSource</code> can be left as default. This setting changes the behaviour of the 'now playing' bar.</p>
+<p>By default, the console will attempt to fill the bar by checking these sources, in this order:</p>
+<ul>
+<li>The current track playing, provided as PE to Radioplayer.</li>
+<li>The current programme on air, provided as PI to Radioplayer.</li>
+<li>The metadata coming from the live audio stream.</li>
+<li>The station description, provided in SI to Radioplayer.</li>
+<li>The station name, provided in SI to Radioplayer.</li>
+</ul>
+<p>If you wish, the contents of the bar can be locked to specific source.
+Other options for <code>nowPlayingSource</code> include:</p>
+<ul>
+<li>'default-no-stream' - this uses the default behaviour listed above, but doesn't look at the stream for metadata.</li>
+<li>'stream' - this uses the metadata in the stream only.</li>
+<li>'SI' - this uses either the station description (if provided) or name from your SI provided to Radioplayer.</li>
+<li>'PI' - this uses the programme name provided to Radioplayer via PI.</li>
+</ul>
+<h3>xDomainProxyUrl for preroll overlays</h3>
+<p><code>xDomainProxyUrl</code> must be set to the full URL to the xdomainproxy.html file, which by default is found in the preroll-framework directory. This file is utilised if a preroll overlay is enabled.</p>
+<h3>initOptions for commercial settings</h3>
+<p><code>initOptions</code> contains 3 options, which if enabled will override their corresponding settings in Radioplayer central systems. Full details on these options are in the Commercial Settings section below.</p>
+<h2>Stream</h2>
+<p>The settings for the stream or On Demand audio are found near the top of index.html</p>
+<p><code>audioLive</code> should be set to true for live streams or false for on demand audio.</p>
+<p><code>audioArray</code> contains the options for the stream(s). You can specify one or many streams and the console will detect the capabilities of the device and will work its way through the array.</p>
+<ul>
+<li><code>audioType</code> can be one of 'playlist', 'http', 'httpmp4m4a', 'rtmp', 'aac' or 'hls'</li>
+<li><code>audioUrl</code> should be set for playlist, http and httpmp4m4a, 'aac' or 'hls.</li>
+<li><code>audioServer</code> and <code>audioEndpoint</code> should be set for rtmp.</li>
+</ul>
+<p><code>bufferTime</code> can be adjusted if necessary.</p>
+<p><code>cacheKiller: true</code> can be added to audioFlash, to add a cache busting parameter to the end of the stream, although this is not usually necessary.</p>
+<h3>Supported Formats</h3>
+<p>For audioType 'playlist', the following playlist formats are supported: SMIL, ASX, XSPF, PLS, M3U.
+Links to 'playlists within playlists' are also supported.</p>
+<p>The other audioTypes are explained as follows<br />
+'http' is to be used for all MP3 streams - shoutcast and icecast and is supported in devices that have Flash or are HTML Audio only<br />
+'httpmp4m4a' is to be used for FLV-encapsulated MP4 streams (eg. AAC streams). Supported in Flash only and encapsultation is compulsory<br />
+'aac' is to be used for un-encapsulated AAC streams. Supported in HTML Audio but not Flash devices.
+<br />
+'hls' can be used if you wish to use the experimental support for HLS. Supported on devices with Flash only and the URL should be an m3u8 playlist.
+<br />
+'rtmp' - RTMP streams with 'server-endpoint' configurations are only configurable in playlists when using XSPF and SMIL formats. RTMP support is limited to devices which support Flash only</p>
+<h3>Changing the audio engine's default feature detection</h3>
+<p>The console will by default attempt to play audio with Flash if the device supports it, and will fall back to HTML Audio if need be. This behaviour is recommended because Flash is more resilient to stream inconsistencies. However if this behaviour needs to be reversed you can change <code>preferredPlaybackMethod</code> to 'html';</p>
+<h3>Cross Domain Issues</h3>
+<p>Some streams/playlists may not play if there are security errors due to your streaming provider not implementing Adobe's crossdomain policy permissions. </p>
+<p>Here is a sample Adobe crossdomain policy file which you can send to your streaming provider, should there be crossdomain issues with your stream or playlist. It is provided separately in the full Radioplayer zip.</p>
+<pre><code>&lt;?xml version=&quot;1.0&quot; ?&gt; 
+&lt;!DOCTYPE cross-domain-policy (View Source for full doctype...)&gt; 
+&lt;cross-domain-policy&gt;
+&lt;site-control permitted-cross-domain-policies=&quot;all&quot; /&gt; 
+&lt;allow-access-from domain=&quot;*.example.com&quot; secure=&quot;false&quot; /&gt; 
+&lt;allow-http-request-headers-from domain=&quot;*.example.com&quot; headers=&quot;*&quot; secure=&quot;false&quot; /&gt; 
+&lt;/cross-domain-policy&gt;
+</code></pre>
+
+<p>More information is available here: <a href="http://learn.adobe.com/wiki/download/attachments/64389123/CrossDomain_PolicyFile_Specification.pdf?version=1">http://learn.adobe.com/wiki/download/attachments/64389123/CrossDomain<em>PolicyFile</em>Specification.pdf?version=1</a></p>
+<h2>Plugin Space</h2>
+<p>The plugin space can be full customised. It is found towards the bottom of index.html and clearly marked by start and end comments. Two types of plugin spaces are allowed - fixed width or responsive. By default, the plugin space is set for fixed-width plugin spaces. If you have a responsive plugin space, set the flag <code>var isResponsive = true;</code></p>
+<h2>Playing Audio Clips</h2>
+<p>An audio clip can be played in the console by simply adding to the console URL <code>?rpAodUrl=</code> followed by the URL of the audio file. The console will attempt to source 'now playing' information for this, firstly from central systems and secondly by looking at any ID3 metadata in the audio file.</p>
+<h2>Commercial Settings</h2>
+<p>The <code>initOptions</code> object found in the head of index.html allows you to enable 3 commercial settings for your console. These options can also be enabled in Radioplayer central systems.</p>
+<h3><s>Interstitials are deprecated</s></h3>
+<p><s>Change <code>enabled</code> to true, to enable an Interstitial, and complete <code>url</code> with the URL for your interstitial page.
+The interstitial will appear when the console is launched, but not when navigating from one Radioplayer to another.</s></p>
+<p><s>You can use the template provided in preroll-framework/index.html to add a Skip button, and handle redirecting back to your console without being shown the interstitial again.</s></p>
+<h3>Song Action</h3>
+<p>A Song Action is a small button which appears to the right side of the 'now playing' strip while a song is playing. The button can link to a URL of your choice, with the artist and/or title being passed along in the query string.</p>
+<p>Change <code>enabled</code> to true to enable a Song Action. <code>type</code> should contain the text for the button. <code>baseurl</code> should contain the URL which will be opened in a new browser window when the button is clicked.</p>
+<p>If you need to pass the artist or title of the song playing to the URL, they can be inserted by using the placeholders [artist] and [title].
+For example, http://www.song-retailer.com/buy.php?artist=[artist]&amp;title=[title].</p>
+<p>If you need to insert the artist or title into a 'URL within a URL', you may require double encoding. If this is the case, you can use [[artist]] and [[title]].</p>
+<h3>Overlay</h3>
+<p>The overlay is mainly used for video ads in this version of the console, which means that if you want to use it for something else <em>and</em> you also run video ads, it's worth knowing that the video ads will always take priority and will eject any overlay content which already exists, if a video needs to run.</p>
+<p>Change <code>enabled</code> to true, to enable an Overlay, and complete <code>url</code> with the URL for your overlay page.
+  The overlay will appear when the console is launched in live mode, occupying the plugin space.
+  Change <code>mute</code> to true, if you wish the stream audio to be muted while the overlay is visible.</p>
+<p>You can use the template provided in preroll-framework/index.html to add a Skip button, and handle closing the overlay. If you opt to have the stream muted, the built-in skip method will handle unmuting the audio for you.</p>
+<h3>AdsWizz and VAST video ads</h3>
+<p>There is now support for AdsWizz and VAST video ads</p>
+<h4>Configuring VAST support</h4>
+<p>The console is built with libraries that support both VAST 2  and VAST 3. When a console is configured for VAST, it will open as normal, make  a call and if there is a VAST response then the console will resize, play the  video and revert to its native size when the video has finished. Of course, if  the console has not opened in a popup, the resizing parts of this will not take  place. The video will be displayed in a space which is up to 640px wide and  480px high. It should be noted that the VAST response must contain a reference  to a playable video asset. Do not use SWF's as ads or ad containers. It's not  possible to track or render them correctly.</p>
+<p>  Companion ads are supported and will be displayed below the  video player when they are defined in the ad response. It should be noted that  a limited amount of space exists below the video player and we recommend a  maximum size of 700px x 100px to prevent layout breakages or unexpected  scrolling.</p>
+<p>  To configure your console, you will require your vast ad  tag. This looks something like<br />
+  <code>http://my.adprovider.com/path/to/vasttag.xml</code><br />
+  Edit the console's index.html file and locate the code block  below</p>
+<code>
+  var vastAds = {<br />
+  enabled: false,<br />
+  vjsSkin: 'vjs-default-skin',<br />
+  vastTag: 'VAST_TAG_URL'<br />
+  }; </code>
+<p>Update this block with your VAST ad tag URL and ensure the enabled flag is set to true to give  something like this:</p>
+<code>
+  var vastAds = {<br />
+  enabled: true,<br />
+  vjsSkin: 'vjs-default-skin',<br />
+  vastTag:  'http://my.adprovider.com/path/to/vasttag.xml'<br />
+  }; </code>
+<p>It is possible to change the styles of the VST video player  by changing the value of vjsSkin and  specifying your own stylesheet. This is not recommended and you should leave as  is. Ensure the value for enabled is  not enclosed in quotation marks.</p>
+<p>  Once editing is complete, save the index.html file and  replace your existing version with this one. A VAST ad will then be called  whenever the console is loaded.</p>
+<h4>Configuring AdsWizz support</h4>
+<p>The Radioplayer console is also AdsWizz-enabled out of the  box. AdsWizz, at the time of writing, offer two solutions - a client-side  solution and the more popular server-side solution. In the case of a  client-side solution, adverts are delivered via VAST and the framework  explained above will allow a station to deploy that. <br />
+  </p>
+<p>However for stations using the server-side solution (whereby  ads are injected into a listeners' stream at the start of - and during the  stream) the console can be configured to respond to this. Like VAST, a  companion ad is available but only available when the console is using Flash as  a playback engine since the HTML5 player cannot extract the metadata from the  stream. In this solution the companion ad is permitted to occupy up to the full  size of the plugin space. A station, during their setup with AdsWizz will  determine what sizes of companion ads they wish to support. This allows  everything from a simple MPU to a rich media experience in the plugin space.<br />
+  </p>
+<p>To configure the console you will need:</p>
+<ol>
+  <li>Your <strong>AdsWizz  hostname</strong>. This isn't the full Adswizz domain - just the first part. So, if  AdsWizz give you a domain such as 'myadswizzdomain.adswizz.com', please use  only 'myadswizzdomain'.</li>
+  <li><strong>AdsWizz  Zone ID</strong> for at least one of either the pre-roll or mid-roll ad streams.  These are two numbers specific to the station, which AdsWizz will provide you.  In this example, we will use 11111 for pre-roll and 22222 for mid-roll</li>
+  <li>Additionally you may have an <strong>Adswizz Player ID</strong></li>
+  <li>An flv encapsulated stream, ideally AAC, from  which the metadata can be extracted</li>
+</ol>
+<p>Edit the console's index.html file and locate the following  code block:</p>
+<code>
+  var adsWizz = {<br />
+  enabled: false,<br />
+  domain: 'ADSWIZZ_DOMAIN',<br />
+  prerollZoneId: PREROLL_ID,<br />
+  midrollZoneId: MIDROLL_ID,<br />
+  playerId: 'CARP'<br />
+  }; </code>
+<p>Replace the placeholders with your hostname, preroll ID and  midroll ID so ending up with something like this:</p>
+<code>
+  var adsWizz = {<br />
+  enabled: true,<br />
+  domain: 'myadswizzdomain',<br />
+  prerollZoneId: 11111,<br />
+  midrollZoneId: 22222,<br />
+  playerId: 'UKRP'<br />
+  }; </code>
+<p>Ensure the enabled  flag is set to true and that only the domain  and playerId value should be in quote  marks. The rest are boolean and numeric, so should be stated as such.<br />
+  </p>
+<p>The index file can then be saved and replaced on the server.</p>
+<h2>Advanced Topics</h2>
+<h3>Showing an Overlay at any time</h3>
+<p>You can show an overlay at any time, by making a JavaScript call to:</p>
+<p><code>radioplayer.services.showOverlay('http://www.example.com', true);</code></p>
+<p>The first parameter is the URL for the overlay, and the second parameter should be true/false for whether the stream should be muted.</p>
+<p>You can manually hide an overlay from the console, by making a JavaScript call to:</p>
+<p><code>radioplayer.services.hideOverlay();</code></p>
+<h3>Internationalisation</h3>
+<p>Text in Radioplayer is stored in js/lang-en-ca.js</p>
+<p>To change the language, create a copy of this file, alter the strings inside for the new language, and then update the reference in index.html to point to your new language file.</p>
+<p>You should also update the 6 instances of <code>lang=&quot;en&quot;</code> at the top of index.html to reflect the new language. Information regarding the lang attribute is available at <code>http://www.w3schools.com/tags/ref_language_codes.asp</code></p>
+<h3>Development and Debug Mode</h3>
+<p>You can enable the javascript debug very easily by appending ?debug=true to any console URL. The debug information for both the console and the flash EMP will be output to the javscript console.</p>
+<p>The console also supports a staging mode. This is detailed in more depth, in the User Guide. Once you have been issued a development host, you can set it as a querystring param <code>devapi=RPDEV_DOMAIN_NAME</code></p>
+<p>&nbsp;</p>
+<p>Editing the first-run cookie announcement</p>
+<p>The first-run cookie announcement is defined in the index.html file. The panel is shown to users the very first time they use the Radioplayer console (or if they've recently cleared cookies). The copy provided is adequate to comply with CA law but if you need to add to it, you can do so. To change the link that the copy clicks through to, edit <code>/js/lang-en-ca.js</code> and edit the value of <code>cookie_link</code></p>
+<h3>jQuery</h3>
+<p>Radioplayer does not use jQuery's &quot;no conflict&quot; mode.</p>
+<p>The console is currently using v1.10.0, as .1 and .2 causes an issue with cross domain iframes on Safari and IE. If using later version, test these browsers and look for SCRIPT5 errors.</p>
+<h3>Sideways Navigation</h3>
+<p>If you have a link in your plugin space to navigate from one console to another, there's an attribute <code>data-newstationid</code> which you should add to your link tag so that it can be tracked for analytics purposes. The following is an example of a link, where XXXX should be replaced with the destination player's Radioplayer ID.</p>
+<p><code>&lt;a href=&quot;http://player.example.com/&quot; data-newstationid=&quot;XXXX&quot;&gt;My other station&lt;/a&gt;</code></p>
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->

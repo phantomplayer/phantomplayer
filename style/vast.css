@@ -1,0 +1,87 @@
+.radioplayer .video-js .vjs-tech {
+  position: relative;
+  width: 90%;
+  max-width: 640px;
+  margin: 0 5%;
+  height: auto; }
+
+.radioplayer .video-js {
+  margin: 20px auto; }
+
+.radioplayer .vast-container .companion-container {
+  width: 90%;
+  max-width: 640px;
+  margin: 10px auto;
+  text-align: center; }
+
+.radioplayer .vast-container .close-vast-btn-container {
+  display: block;
+  height: 44px;
+  position: absolute;
+  right: 0;
+  top: 0; }
+  .radioplayer .vast-container .close-vast-btn-container .close-vast-btn {
+    position: relative;
+    display: block;
+    margin: 5px 10px 0;
+    clear: both;
+    float: right;
+    width: 25px;
+    height: 25px;
+    -moz-border-radius: 13px;
+    border-radius: 13px;
+    border: 2px solid #ffffff;
+    background-color: #444444;
+    text-align: center;
+    color: #fff; }
+    .radioplayer .vast-container .close-vast-btn-container .close-vast-btn span {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 21px;
+      font-size: 14px;
+      text-align: center;
+      line-height: 17px; }
+    .radioplayer .vast-container .close-vast-btn-container .close-vast-btn .close-vast-btn-label {
+      overflow: hidden;
+      text-indent: -9999px; }
+  .radioplayer .vast-container .close-vast-btn-container .close-vast-btn:hover {
+    cursor: pointer; }
+
+.vast-skip-button {
+  display: block;
+  position: absolute;
+  top: 5px;
+  right: 0;
+  width: auto;
+  background-color: #000;
+  color: #AAA;
+  font-size: 12px;
+  font-style: italic;
+  line-height: 12px;
+  padding: 10px;
+  z-index: 2; }
+
+.vast-skip-button.enabled {
+  cursor: pointer;
+  color: #fff; }
+
+.vast-skip-button.enabled:hover {
+  cursor: pointer;
+  background: #333; }
+
+.vast-blocker {
+  display: block;
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  background-image: url(about:blank); }
+
+/*# sourceMappingURL=vast.css.map */
